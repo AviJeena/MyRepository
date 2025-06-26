@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Code Practice</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/practice.css') }}">
+</head>
+<body>
+  <div class="editor-container">
+    <h1>🧪 Python Practice Editor</h1>
+    <textarea id="code" placeholder="Write your Python code here...">print("Hello, Python!")</textarea>
+    <button onclick="runCode()">Run Code</button>
+    <div class="output">
+      <h2>📤 Output:</h2>
+      <pre id="output"></pre>
+    </div>
+  </div>
+
+  <script>
+    function runCode() {
+      const code = document.getElementById('code').value;
+      fetch('/run', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({ code })
+      })
+      .then(res => res.json())
+      .then(data => {
+        document.getElementById('output').textContent = data.output;
+      })
+      .catch(err => {
+        document.getElementById('output').textContent = 'Error: ' + err;
+      });
+    }
+  </script>
+</body>
+</html>

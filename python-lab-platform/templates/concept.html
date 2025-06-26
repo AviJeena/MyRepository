@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{{ topic }} - Python Virtual Lab</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/concept.css') }}">
+</head>
+<body>
+  <div class="top-bar">
+    <a href="/" class="back-btn">← Back to Home</a>
+    <h1>{{ topic }} in Python</h1>
+  </div>
+
+  <div class="content-container">
+    <!-- 📘 THEORY SECTION -->
+    <div class="theory-box">
+      <h2>📖 Theory</h2>
+      {% if topic == 'Variables' %}
+        <p>In Python, variables store data values. You assign a value using the <code>=</code> operator. Variables don’t require declaration of type.</p>
+      {% elif topic == 'Conditionals' %}
+        <p>Conditional statements control the flow of logic using <code>if</code>, <code>elif</code>, and <code>else</code>. They help your program make decisions.</p>
+      {% elif topic == 'Loops' %}
+        <p>Loops allow code to repeat. <code>for</code> loops iterate over sequences, while <code>while</code> loops continue as long as a condition is true.</p>
+      {% elif topic == 'Functions' %}
+        <p>Functions are reusable code blocks. Defined using <code>def</code>, they help modularize code and can accept parameters and return results.</p>
+      {% elif topic == 'Object-Oriented Programming (OOP)' %}
+        <p>OOP organizes code using <strong>classes</strong> and <strong>objects</strong>. A class is a blueprint; an object is an instance. It promotes modularity, reuse, and abstraction.</p>
+      {% endif %}
+    </div>
+
+    <!-- 💡 CODE EXAMPLE SECTION -->
+    <div class="code-box">
+      <h2>💡 Example</h2>
+      <pre><code>
+{% if topic == 'Variables' %}
+x = 10
+print(x)
+{% elif topic == 'Conditionals' %}
+score = 70
+if score >= 50:
+    print("Pass")
+else:
+    print("Fail")
+{% elif topic == 'Loops' %}
+for i in range(3):
+    print(i)
+{% elif topic == 'Functions' %}
+def greet():
+    print("Hello!")
+
+greet()
+{% elif topic == 'Object-Oriented Programming (OOP)' %}
+class Dog:
+    def bark(self):
+        print("Woof!")
+
+d = Dog()
+d.bark()
+{% endif %}
+      </code></pre>
+    </div>
+
+    <!-- 🎬 ANIMATED VISUALIZATION SECTION -->
+    <div class="animation-area">
+      {% if topic == 'Variables' %}
+        <div class="scene">
+          <div class="value" id="value">10</div>
+          <div class="arrow">→</div>
+          <div class="box" id="box">
+            <span class="label">x</span>
+          </div>
+        </div>
+
+      {% elif topic == 'Conditionals' %}
+        <div class="conditional-scene">
+          <div class="condition">score ≥ 50</div>
+          <div class="branch pass highlight">→ Pass ✅</div>
+          <div class="branch fail">→ Fail ❌</div>
+        </div>
+
+      {% elif topic == 'Loops' %}
+        <div class="loop-scene">
+          <div class="loop-counter" id="loop-counter">i = 0</div>
+          <div class="loop-box">
+            <div class="iteration" id="iter-1">Iteration 1</div>
+            <div class="iteration" id="iter-2">Iteration 2</div>
+            <div class="iteration" id="iter-3">Iteration 3</div>
+          </div>
+        </div>
+
+      {% elif topic == 'Functions' %}
+        <div class="function-scene">
+          <div class="function-box">def greet()</div>
+          <div class="call-arrow">Call →</div>
+          <div class="output-box">Hello!</div>
+        </div>
+
+      {% elif topic == 'Object-Oriented Programming (OOP)' %}
+        <div class="oop-scene">
+          <div class="class-box" id="oop-class">Class: Dog</div>
+          <div class="arrow oop-arrow">↓</div>
+          <div class="object-box" id="oop-object">Object: d = Dog()</div>
+          <div class="arrow oop-arrow">↓</div>
+          <div class="method-call" id="oop-method">Calling d.bark()...</div>
+          <div class="output oop-output" id="oop-output">Woof! 🐶</div>
+        </div>
+      {% endif %}
+    </div>
+  </div>
+  
+
+  <!-- 🚀 JS Animation Logic -->
+  <script>
+    window.onload = () => {
+      const topic = "{{ topic }}";
+
+      if (topic === "Variables") {
+        document.getElementById('value')?.classList.add('move');
+        setTimeout(() => {
+          document.getElementById('box')?.classList.add('glow');
+        }, 2000);
+      }
+
+      if (topic === "Loops") {
+        let counter = 0;
+        const iterations = [1, 2, 3];
+        const loopLabel = document.getElementById('loop-counter');
+
+        const animate = () => {
+          if (counter < iterations.length) {
+            loopLabel.textContent = `i = ${counter}`;
+            const element = document.getElementById(`iter-${counter + 1}`);
+            element.classList.add('highlight');
+            counter++;
+            setTimeout(animate, 1000);
+          }
+        };
+        animate();
+      }
+
+      if (topic === "Object-Oriented Programming (OOP)") {
+        const classBox = document.getElementById('oop-class');
+        const objectBox = document.getElementById('oop-object');
+        const methodCall = document.getElementById('oop-method');
+        const output = document.getElementById('oop-output');
+
+        setTimeout(() => classBox.classList.add('highlight'), 500);
+        setTimeout(() => objectBox.classList.add('highlight'), 1500);
+        setTimeout(() => methodCall.classList.add('glow'), 2500);
+        setTimeout(() => output.classList.add('fade-in'), 3500);
+      }
+    };
+  </script>
+   
+
+
+</body>
+</html>

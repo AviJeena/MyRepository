@@ -1,0 +1,56 @@
+<!-- templates/editor.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Python Practice Editor</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/concept.css') }}">
+  <style>
+    textarea {
+      width: 100%;
+      height: 200px;
+      font-family: monospace;
+      font-size: 16px;
+      padding: 10px;
+    }
+    #output, .visual {
+      margin-top: 20px;
+      font-family: monospace;
+      white-space: pre-wrap;
+    }
+    .variable-anim {
+      padding: 10px;
+      background: lightblue;
+      display: inline-block;
+      animation: slide-in 1s forwards;
+    }
+    @keyframes slide-in {
+      from { transform: translateX(-200px); opacity: 0; }
+      to { transform: translateX(0); opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="top-bar">
+    <a href="/" class="back-btn">← Back to Home</a>
+    <h1>Python Practice Editor</h1>
+  </div>
+
+  <form method="POST" action="/run-code">
+    <textarea name="code" placeholder="Write your Python code here...">{{ code if code }}</textarea><br>
+    <button type="submit">Run Code</button>
+  </form>
+
+  <div id="output">
+    <h3>Output:</h3>
+    <pre>{{ output }}</pre>
+  </div>
+
+  {% if visuals %}
+    <div class="visual">
+      <h3>Visual Explanation:</h3>
+      {{ visuals|safe }}
+    </div>
+  {% endif %}
+</body>
+</html>
