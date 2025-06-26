@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Expression Analyzer</title>
+  <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <h1>Expression Analyzer</h1>
+
+    <label>Enter Expression:</label>
+    <input type="text" id="expressionInput" placeholder="e.g., a + b * (c - 2)" />
+
+    <label>Enter Variables (a=5, b=3):</label>
+    <input type="text" id="variablesInput" placeholder="e.g., a=2, b=4, c=5" />
+
+    <div class="buttons">
+      <button onclick="analyzeExpression()">Analyze Expression</button>
+      <button onclick="startVisualization()">Visualize AST Step-by-Step</button>
+    </div>
+
+    <h2>Tokens</h2>
+    <div id="tokens" class="token-area"></div>
+
+    <!-- Token Legend -->
+    <div class="legend">
+      <strong>Legend:</strong>
+      <span class="token-identifier">Identifier</span>
+      <span class="token-number">Number</span>
+      <span class="token-operator">Operator</span>
+      <span class="token-punctuation">Punctuation</span>
+      <span class="token-unknown">Unknown</span>
+    </div>
+
+    <h2>Result</h2>
+    <div id="result"></div>
+
+    <h2>Error</h2>
+    <div id="error" class="error"></div>
+
+    <h2>AST (Text View)</h2>
+    <pre id="ast"></pre>
+    <div id="visualizationArea" style="display: none;">
+  <h2>Step-by-Step AST Tree Visualization</h2>
+  <button onclick="nextStep()">Next Step</button>
+  <div class="tree-wrapper">
+    <svg id="treeSvg" width="100%" height="600"></svg>
+  </div>
+</div>
+
+    <!-- Step-by-step visualization area -->
+    <div id="visualizationArea" style="display: none;">
+  <h2>Step-by-Step AST Tree Visualization</h2>
+  <!--<button onclick="nextStep()">Next Step</button>-->
+  <button onclick="togglePlay()" id="playBtn">Play Full Visualization</button>
+  <div class="tree-wrapper">
+    <svg id="treeSvg" width="100%" height="600"></svg>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+</html>
