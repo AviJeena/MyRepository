@@ -1,0 +1,106 @@
+{
+  "info": {
+    "name": "crypto-crash",
+    "_postman_id": "crypto-crash-collection-id",
+    "description": "Postman collection for Crypto Crash Game API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Place Bet",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"jeena\",\n  \"usdAmount\": 10,\n  \"currency\": \"BTC\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/bet",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "bet"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Cashout",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"username\": \"jeena\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5000/api/cashout",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "cashout"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Wallet Balance",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/wallet/jeena",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "wallet",
+            "jeena"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Round History",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/api/rounds/history",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5000",
+          "path": [
+            "api",
+            "rounds",
+            "history"
+          ]
+        }
+      }
+    }
+  ]
+}
