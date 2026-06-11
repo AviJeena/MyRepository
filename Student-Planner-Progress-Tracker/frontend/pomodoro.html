@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro | Student Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">EduPlan</div>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="pomodoro.html" class="active">Pomodoro</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <main class="main-content timer-center">
+            <div class="pomodoro-container card">
+                <h2>Focus Session</h2>
+                <div class="timer-display" id="timer">25:00</div>
+                <div class="timer-controls">
+                    <button class="btn-primary" id="start-btn">Start</button>
+                    <button class="btn-secondary" id="reset-btn">Reset</button>
+                </div>
+            </div>
+        </main>
+    </div>
+    <script src="js/pomodoro.js"></script>
+</body>
+</html>

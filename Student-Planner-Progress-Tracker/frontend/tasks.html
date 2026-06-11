@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tasks | Student Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">EduPlan</div>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html" class="active">Tasks</a></li>
+                <li><a href="pomodoro.html">Pomodoro</a></li>
+                <li><a href="notes.html">Notes</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header>
+                <h1>Task Management</h1>
+                <button class="btn-primary" id="add-task-btn">+ New Task</button>
+            </header>
+            <div class="task-board">
+                <div class="task-column">
+                    <h3>To Do</h3>
+                    <div class="task-card">Algorithm Project Proposal <span class="badge high">High</span></div>
+                </div>
+                <div class="task-column">
+                    <h3>In Progress</h3>
+                    <div class="task-card">Lab Report 3 <span class="badge med">Medium</span></div>
+                </div>
+                <div class="task-column">
+                    <h3>Completed</h3>
+                    <div class="task-card completed">SQL Quiz Prep <span class="badge low">Low</span></div>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

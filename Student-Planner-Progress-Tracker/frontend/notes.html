@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Notes | Student Planner</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">EduPlan</div>
+            <ul>
+                <li><a href="dashboard.html">Dashboard</a></li>
+                <li><a href="tasks.html">Tasks</a></li>
+                <li><a href="pomodoro.html">Pomodoro</a></li>
+                <li><a href="notes.html" class="active">Notes</a></li>
+                <li><a href="calendar.html">Calendar</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="settings.html">Settings</a></li>
+            </ul>
+        </nav>
+        <main class="main-content">
+            <div class="notes-workspace">
+                <div class="notes-sidebar">
+                    <button class="btn-primary w-100">+ New Note</button>
+                    <ul class="notes-list">
+                        <li class="active">System Design Patterns</li>
+                        <li>Compiler Design Formulae</li>
+                    </ul>
+                </div>
+                <div class="note-editor card">
+                    <input type="text" class="note-title-input" value="System Design Patterns">
+                    <textarea class="note-textarea" placeholder="Start typing your lecture notes here..."></textarea>
+                </div>
+            </div>
+        </main>
+    </div>
+</body>
+</html>

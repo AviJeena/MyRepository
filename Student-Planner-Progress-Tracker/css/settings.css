@@ -1,0 +1,73 @@
+/* Settings Configuration Page Panels */
+.settings-card {
+    max-width: 700px;
+    margin-top: 2rem;
+}
+
+.settings-card h3 {
+    margin-top: 0;
+    margin-bottom: 1.5rem;
+    color: #94a3b8;
+    font-size: 1.2rem;
+}
+
+/* Custom Styled Option Wrappers */
+.settings-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.settings-option:last-of-type {
+    border-bottom: none;
+    margin-bottom: 2rem;
+}
+
+.settings-option label {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.settings-option label span {
+    font-weight: 500;
+}
+
+.settings-option label small {
+    color: #64748b;
+    font-size: 0.85rem;
+}
+
+.settings-option input[type="checkbox"] {
+    width: 42px;
+    height: 22px;
+    appearance: none;
+    background-color: #334155;
+    border-radius: 12px;
+    position: relative;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.settings-option input[type="checkbox"]:checked {
+    background-color: var(--accent);
+}
+
+.settings-option input[type="checkbox"]::before {
+    content: '';
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: white;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.2s;
+}
+
+.settings-option input[type="checkbox"]:checked::before {
+    transform: translateX(20px);
+}
